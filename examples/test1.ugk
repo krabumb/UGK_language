@@ -1,0 +1,65 @@
+import a.b.c;
+
+var x = 3;
+int t = 2;
+var z = x + t;
+
+print(x);
+print(t);
+print(z);
+
+print("Hello World");
+
+function foo(var x, int y) {
+    print(x + y);
+}
+
+foo(3, 4);
+
+function int bar(var x, int y) {
+    return x + y;
+}
+
+var a = bar(3, 4);
+print(a);
+
+function var bvar(var x, int y) {
+    return x + y;
+}
+
+var b = bvar(3, 4);
+print(b);
+
+type mytype {
+    + var x = 4;
+    - int y = 5;
+
+    + function foo() {
+        print("foo");
+    }
+
+    - function bar() {
+        print("bar");
+    }
+
+    + function var baz() {
+        self.bar();
+        self.y = 6;
+        return 3;
+    }
+}
+
+var c = mytype(3, 4);
+print(c.x);
+print(c.y);
+
+var d = mytype();
+d.x = 3;
+print(d.x);
+print(d.y);
+
+var e = mytype(3);
+print(e.x);
+print(e.y);
+print(e.baz());
+e.foo();
