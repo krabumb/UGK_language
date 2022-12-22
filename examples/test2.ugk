@@ -1,0 +1,4 @@
+algorithme
+    debut
+        entier x := y - z
+    fin
