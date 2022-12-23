@@ -28,7 +28,7 @@ public class Main {
             CommonTokenStream stream = new CommonTokenStream(lexer);
             ugkParser parser = new ugkParser(stream);
 
-            ugkParser.ProgrammeContext program = parser.programme();
+            ugkParser.UgkContext program = parser.ugk();
 
             // code d'affichage de l'arbre syntaxique
             JFrame frame = new JFrame("Antlr AST");

@@ -1,0 +1,7 @@
+importer <fibonnaci.ugk>
+
+algorithme
+    debut
+        ecrire("Test rfibonnaci de 5 : " + rfibonnaci(5))
+        ecrire("Test ifibonnaci de -6 : " + ifibonnaci(-6))
+    fin

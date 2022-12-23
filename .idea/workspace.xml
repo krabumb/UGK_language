@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9252ba-7b93-4ca8-a19b-50f9440aab65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/test2.ugk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launch.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/fibonnaci.ugk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/fibotest.ugk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/test1.ugk" beforeDir="false" afterPath="$PROJECT_DIR$/examples/test1.ugk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/test2.ugk" beforeDir="false" afterPath="$PROJECT_DIR$/examples/test2.ugk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launch.bat" beforeDir="false" afterPath="$PROJECT_DIR$/launch.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ugk.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ugk.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ugk.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ugk.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ugkLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ugkLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ugkLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ugkLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ugkLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ugkLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ugkParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ugkParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ugk.g4" beforeDir="false" afterPath="$PROJECT_DIR$/ugk.g4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +42,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/examples" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -55,7 +66,10 @@
       <workItem from="1671699210559" duration="3158000" />
       <workItem from="1671714948197" duration="5297000" />
       <workItem from="1671722768946" duration="790000" />
-      <workItem from="1671723579199" duration="978000" />
+      <workItem from="1671723579199" duration="1460000" />
+      <workItem from="1671782639724" duration="801000" />
+      <workItem from="1671801187001" duration="170000" />
+      <workItem from="1671801539101" duration="5541000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,22 @@
+fonction entier ifibonnaci(entier n)
+    debut
+        entier i := 0
+        entier j := 1
+        pour k de 2 a n faire
+            entier k := i
+            i := i + j
+            j := k
+        fpour
+        retourne i
+    fin
+
+fonction entier rfibonnaci(entier n)
+    debut
+        si n < 1
+        alors retourne 0
+        fsi
+        si n = 1
+        alors retourne 1
+        fsi
+        retourne rfibonnaci(n - 1) + rfibonnaci(n - 2)
+    fin

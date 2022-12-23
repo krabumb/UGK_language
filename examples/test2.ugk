@@ -1,4 +1,4 @@
 algorithme
     debut
-        entier x := y - z
+        entier test := 24 - 65
     fin

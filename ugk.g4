@@ -4,8 +4,12 @@ grammar ugk;
 package parser;
 }
 
-programme : algorithme EOF
-    | fonction EOF
+ugk : (imports)? programme EOF ;
+
+imports : ('importer' '<' FILENAME '.ugk' '>')+ ;
+
+programme : (fonction)* algorithme
+    | (fonction)+
     ;
 
 algorithme : 'algorithme' 'debut' algofoncblock 'fin'
@@ -17,30 +21,34 @@ fonction : 'fonction' type IDF '(' (funcdecargs)? ')' 'debut' algofoncblock 'fin
 funcdecargs : type IDF (',' type IDF)*
     ;
 
-algofoncblock : (block)*
+algofoncblock : (instruction)*
     ;
 
-currblock : (block)*
+block : (instruction)*
     ;
 
-block : declaration
+instruction : declaration
     | assignation
     | si
     | tantque
     | appelfonc
     | pour
+    | retourne
+    ;
+
+retourne : 'retourne' (expr)?
     ;
 
 assignation : IDF ':=' expr
     ;
 
-si : 'si' expr 'alors' currblock ('sinon' currblock)? 'fsi'
+si : 'si' expr 'alors' block ('sinon' block)? 'fsi'
     ;
 
-tantque : 'tant' 'que' expr 'faire' currblock 'ftant'
+tantque : 'tant' 'que' expr 'faire' block 'ftant'
     ;
 
-pour : 'pour' IDF 'de' expr 'a' expr 'faire' currblock 'fpour'
+pour : 'pour' IDF 'de' expr 'a' expr 'faire' block 'fpour'
     ;
 
 appelfonc : IDF '(' (foncargs)? ')'
@@ -65,44 +73,44 @@ primitive : 'entier'
     ;
 
 expr : addsousexpr
-    | multordivexpr
-    | exprres
+    ;
+
+addsousexpr : multordivexpr (pmo expr)?
+    ;
+
+multordivexpr : boolexpr (mde expr)?
+    ;
+
+boolexpr : exprres (boolop expr)?
     ;
 
 exprres : appelfonc
     | 'nil'
-    | '-' exprres // Instruction a corriger car crash
     | '(' expr ')'
     | 'non' expr
+    | '-' exprres
     | multipleexprcomp
     | FLOAT
     | DOUBLE
     | INTEGER
     | STRING
-    | BOOLEEN
+    | booleen
     | IDF
     ;
 
 multipleexprcomp : '°' (foncargs)? '°'
     ;
 
-addsousexpr : multordivexpr (PMO expr)?
-    ;
+pmo : '-' | '+' | 'ou' ;
+mde : '*' | '/' | 'mod' | 'quo' | 'et' ;
+boolop : '<=' | '>=' | '!=' | '=' | '>' | '<' ;
+booleen : 'true' | 'false' ;
 
-multordivexpr : boolexpr (MDE expr)?
-    ;
-
-boolexpr : exprres (BOOLOP expr)?
-    ;
-
-PMO : '+' | '-' | 'ou' ;
-MDE : '*' | '/' | 'mod' | 'quo' | 'et' ;
-BOOLOP : '<=' | '>=' | '!=' | '=' | '>' | '<' ;
-BOOLEEN : 'true' | 'false' ;
 STRING : '"' .*? '"' ;
 INTEGER : [0-9]+ ;
 DOUBLE : (INTEGER)?'.'INTEGER ;
 FLOAT : DOUBLE'f' ;
+FILENAME : [a-zA-Z0-9_]+ ;
 IDF : [a-zA-Z_][a-zA-Z0-9_]* ;
 TYPE : [a-zA-Z][a-zA-Z0-9]* ;
 WS : ('\n'+ | '\t'+ | ' '+ | '\r'+) -> skip ;
