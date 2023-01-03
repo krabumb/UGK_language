@@ -20,3 +20,7 @@ fonction entier rfibonnaci(entier n)
         fsi
         retourne rfibonnaci(n - 1) + rfibonnaci(n - 2)
     fin
+
+algorithme
+    debut
+    fin

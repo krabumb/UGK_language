@@ -6,7 +6,9 @@ package parser;
 
 ugk : (imports)? programme EOF ;
 
-imports : ('importer' '<' FILENAME '.ugk' '>')+ ;
+imports : (singleimport)+ ;
+
+singleimport : 'importer' '<' filename '.ugk' '>' ;
 
 programme : (fonction)* algorithme
     | (fonction)+
@@ -15,10 +17,11 @@ programme : (fonction)* algorithme
 algorithme : 'algorithme' 'debut' algofoncblock 'fin'
     ;
 
-fonction : 'fonction' type IDF '(' (funcdecargs)? ')' 'debut' algofoncblock 'fin'
+fonction : 'fonction' type idf '(' (funcdecargs)? ')' 'debut' algofoncblock 'fin'
     ;
 
-funcdecargs : type IDF (',' type IDF)*
+funcdecargs : type idf
+    | type idf  (',' type idf)+
     ;
 
 algofoncblock : (instruction)*
@@ -39,25 +42,28 @@ instruction : declaration
 retourne : 'retourne' (expr)?
     ;
 
-assignation : IDF ':=' expr
+assignation : idf ':=' expr
     ;
 
-si : 'si' expr 'alors' block ('sinon' block)? 'fsi'
+si : siblock  ('sinon' siblock)*  ('sinon' block)? 'fsi'
+    ;
+
+siblock : 'si' expr 'alors' block
     ;
 
 tantque : 'tant' 'que' expr 'faire' block 'ftant'
     ;
 
-pour : 'pour' IDF 'de' expr 'a' expr 'faire' block 'fpour'
+pour : 'pour' idf 'allant' 'de' expr 'vers' expr 'faire' block 'fpour'
     ;
 
-appelfonc : IDF '(' (foncargs)? ')'
+appelfonc : idf '(' (foncargs)? ')'
     ;
 
 foncargs : expr (',' expr)*
     ;
 
-declaration : type IDF (':=' expr)?
+declaration : type idf (':=' expr)?
     ;
 
 type : primitive
@@ -95,7 +101,7 @@ exprres : appelfonc
     | INTEGER
     | STRING
     | booleen
-    | IDF
+    | idf
     ;
 
 multipleexprcomp : '°' (foncargs)? '°'
@@ -106,11 +112,14 @@ mde : '*' | '/' | 'mod' | 'quo' | 'et' ;
 boolop : '<=' | '>=' | '!=' | '=' | '>' | '<' ;
 booleen : 'true' | 'false' ;
 
+idf : TYPE | IDF ;
+filename : TYPE | IDF | FILENAME ;
+
 STRING : '"' .*? '"' ;
 INTEGER : [0-9]+ ;
-DOUBLE : (INTEGER)?'.'INTEGER ;
-FLOAT : DOUBLE'f' ;
-FILENAME : [a-zA-Z0-9_]+ ;
-IDF : [a-zA-Z_][a-zA-Z0-9_]* ;
+DOUBLE : (INTEGER)? '.' INTEGER ;
+FLOAT : DOUBLE 'f' ;
 TYPE : [a-zA-Z][a-zA-Z0-9]* ;
+IDF : [a-zA-Z_][a-zA-Z0-9_]* ;
+FILENAME : [a-zA-Z0-9_]+ ;
 WS : ('\n'+ | '\t'+ | ' '+ | '\r'+) -> skip ;

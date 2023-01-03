@@ -1,0 +1,73 @@
+importer <math.ugk>
+
+fonction entier factorial(entier n) debut
+    entier result := 1
+    pour i allant de 1 vers n faire
+        result := result * i
+    fpour
+    retourne result
+fin
+
+fonction double fibonacci(entier n) debut
+    double result
+    si n <= 1 alors
+        result := n
+    sinon
+        result := fibonacci(n - 1) + fibonacci(n - 2)
+    fsi
+    retourne result
+fin
+
+fonction chaine to_roman(entier n) debut
+    chaine result
+    tant que n > 0 faire
+        si n >= 1000 alors
+            result := concat(result, "M")
+            n := n - 1000
+        sinon si n >= 900 alors
+            result := concat(result, "CM")
+            n := n - 900
+        sinon si n >= 500 alors
+            result := concat(result, "D")
+            n := n - 500
+        sinon si n >= 400 alors
+            result := concat(result, "CD")
+            n := n - 400
+        sinon si n >= 100 alors
+            result := concat(result, "C")
+            n := n - 100
+        sinon si n >= 90 alors
+            result := concat(result, "XC")
+            n := n - 90
+        sinon si n >= 50 alors
+            result := concat(result, "L")
+            n := n - 50
+        sinon si n >= 40 alors
+            result := concat(result, "XL")
+            n := n - 40
+        sinon si n >= 10 alors
+            result := concat(result, "X")
+            n := n - 10
+        sinon si n >= 9 alors
+            result := concat(result, "IX")
+            n := n - 9
+        sinon si n >= 5 alors
+            result := concat(result, "V")
+            n := n - 5
+        sinon si n >= 4 alors
+            result := concat(result, "IV")
+            n := n - 4
+        sinon
+            result := concat(result, "I")
+            n := n - 1
+        fsi
+    ftant
+    retourne result
+fin
+
+algorithme debut
+    entier i
+    pour i allant de 1 vers 3999 faire
+        afficher(to_roman(i))
+    fpour
+fin
