@@ -3,8 +3,8 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RecognitionException;
-import parser.ugkLexer;
-import parser.ugkParser;
+import parser.UgkLexer;
+import parser.UgkParser;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -24,11 +24,11 @@ public class Main {
 
             //chargement du fichier et construction du parser
             CharStream input = CharStreams.fromFileName(testFile);
-            ugkLexer lexer = new ugkLexer(input);
+            UgkLexer lexer = new UgkLexer(input);
             CommonTokenStream stream = new CommonTokenStream(lexer);
-            ugkParser parser = new ugkParser(stream);
+            UgkParser parser = new UgkParser(stream);
 
-            ugkParser.UgkContext program = parser.ugk();
+            UgkParser.UgkContext program = parser.ugk();
 
             // code d'affichage de l'arbre syntaxique
             JFrame frame = new JFrame("Antlr AST");
@@ -36,7 +36,7 @@ public class Main {
             TreeViewer viewer = new TreeViewer(Arrays.asList(
                     parser.getRuleNames()),program);
 
-            viewer.setScale(0.8); // Scale a little
+            viewer.setScale(0.5); // Scale a little
             panel.add(viewer);
             frame.add(panel);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

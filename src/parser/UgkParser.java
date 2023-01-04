@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
-public class ugkParser extends Parser {
+public class UgkParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.11.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -55,8 +55,8 @@ public class ugkParser extends Parser {
 			"'fsi'", "'si'", "'alors'", "'tant'", "'que'", "'faire'", "'ftant'", 
 			"'pour'", "'allant'", "'de'", "'vers'", "'fpour'", "'entier'", "'chaine'", 
 			"'caractere'", "'double'", "'booleen'", "'flottant'", "'nil'", "'non'", 
-			"'-'", "'\\u00C2\\u00B0'", "'+'", "'ou'", "'*'", "'/'", "'mod'", "'quo'", 
-			"'et'", "'<='", "'>='", "'!='", "'='", "'true'", "'false'"
+			"'-'", "'\\u00B0'", "'+'", "'ou'", "'*'", "'/'", "'mod'", "'quo'", "'et'", 
+			"'<='", "'>='", "'!='", "'='", "'true'", "'false'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -116,7 +116,7 @@ public class ugkParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public ugkParser(TokenStream input) {
+	public UgkParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -126,7 +126,7 @@ public class ugkParser extends Parser {
 		public ProgrammeContext programme() {
 			return getRuleContext(ProgrammeContext.class,0);
 		}
-		public TerminalNode EOF() { return getToken(ugkParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(UgkParser.EOF, 0); }
 		public ImportsContext imports() {
 			return getRuleContext(ImportsContext.class,0);
 		}
@@ -134,6 +134,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ugk; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitUgk(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final UgkContext ugk() throws RecognitionException {
@@ -182,6 +187,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_imports; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitImports(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ImportsContext imports() throws RecognitionException {
@@ -227,6 +237,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_singleimport; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitSingleimport(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SingleimportContext singleimport() throws RecognitionException {
@@ -273,6 +288,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_programme; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitProgramme(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgrammeContext programme() throws RecognitionException {
@@ -345,6 +365,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_algorithme; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitAlgorithme(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AlgorithmeContext algorithme() throws RecognitionException {
@@ -392,6 +417,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_fonction; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitFonction(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FonctionContext fonction() throws RecognitionException {
@@ -458,6 +488,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_funcdecargs; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitFuncdecargs(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FuncdecargsContext funcdecargs() throws RecognitionException {
@@ -529,6 +564,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_algofoncblock; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitAlgofoncblock(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AlgofoncblockContext algofoncblock() throws RecognitionException {
@@ -577,6 +617,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_block; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitBlock(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BlockContext block() throws RecognitionException {
@@ -640,6 +685,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instruction; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitInstruction(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final InstructionContext instruction() throws RecognitionException {
@@ -720,6 +770,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_retourne; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitRetourne(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final RetourneContext retourne() throws RecognitionException {
@@ -765,6 +820,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assignation; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitAssignation(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AssignationContext assignation() throws RecognitionException {
@@ -807,6 +867,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_si; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitSi(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SiContext si() throws RecognitionException {
@@ -876,6 +941,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_siblock; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitSiblock(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SiblockContext siblock() throws RecognitionException {
@@ -917,6 +987,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_tantque; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitTantque(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TantqueContext tantque() throws RecognitionException {
@@ -968,6 +1043,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_pour; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitPour(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final PourContext pour() throws RecognitionException {
@@ -1021,6 +1101,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_appelfonc; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitAppelfonc(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AppelfoncContext appelfonc() throws RecognitionException {
@@ -1071,6 +1156,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_foncargs; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitFoncargs(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FoncargsContext foncargs() throws RecognitionException {
@@ -1126,6 +1216,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_declaration; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitDeclaration(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DeclarationContext declaration() throws RecognitionException {
@@ -1169,11 +1264,16 @@ public class ugkParser extends Parser {
 		public PrimitiveContext primitive() {
 			return getRuleContext(PrimitiveContext.class,0);
 		}
-		public TerminalNode TYPE() { return getToken(ugkParser.TYPE, 0); }
+		public TerminalNode TYPE() { return getToken(UgkParser.TYPE, 0); }
 		public TypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_type; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitType(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TypeContext type() throws RecognitionException {
@@ -1223,6 +1323,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_primitive; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitPrimitive(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final PrimitiveContext primitive() throws RecognitionException {
@@ -1264,6 +1369,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitExpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExprContext expr() throws RecognitionException {
@@ -1302,6 +1412,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_addsousexpr; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitAddsousexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AddsousexprContext addsousexpr() throws RecognitionException {
@@ -1352,6 +1467,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_multordivexpr; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitMultordivexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final MultordivexprContext multordivexpr() throws RecognitionException {
@@ -1402,6 +1522,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_boolexpr; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitBoolexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BoolexprContext boolexpr() throws RecognitionException {
@@ -1451,10 +1576,10 @@ public class ugkParser extends Parser {
 		public MultipleexprcompContext multipleexprcomp() {
 			return getRuleContext(MultipleexprcompContext.class,0);
 		}
-		public TerminalNode FLOAT() { return getToken(ugkParser.FLOAT, 0); }
-		public TerminalNode DOUBLE() { return getToken(ugkParser.DOUBLE, 0); }
-		public TerminalNode INTEGER() { return getToken(ugkParser.INTEGER, 0); }
-		public TerminalNode STRING() { return getToken(ugkParser.STRING, 0); }
+		public TerminalNode FLOAT() { return getToken(UgkParser.FLOAT, 0); }
+		public TerminalNode DOUBLE() { return getToken(UgkParser.DOUBLE, 0); }
+		public TerminalNode INTEGER() { return getToken(UgkParser.INTEGER, 0); }
+		public TerminalNode STRING() { return getToken(UgkParser.STRING, 0); }
 		public BooleenContext booleen() {
 			return getRuleContext(BooleenContext.class,0);
 		}
@@ -1465,6 +1590,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_exprres; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitExprres(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExprresContext exprres() throws RecognitionException {
@@ -1588,6 +1718,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_multipleexprcomp; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitMultipleexprcomp(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final MultipleexprcompContext multipleexprcomp() throws RecognitionException {
@@ -1629,6 +1764,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_pmo; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitPmo(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final PmoContext pmo() throws RecognitionException {
@@ -1667,6 +1807,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_mde; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitMde(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final MdeContext mde() throws RecognitionException {
@@ -1705,6 +1850,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_boolop; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitBoolop(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BoolopContext boolop() throws RecognitionException {
@@ -1743,6 +1893,11 @@ public class ugkParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_booleen; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitBooleen(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BooleenContext booleen() throws RecognitionException {
@@ -1777,12 +1932,17 @@ public class ugkParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IdfContext extends ParserRuleContext {
-		public TerminalNode TYPE() { return getToken(ugkParser.TYPE, 0); }
-		public TerminalNode IDF() { return getToken(ugkParser.IDF, 0); }
+		public TerminalNode TYPE() { return getToken(UgkParser.TYPE, 0); }
+		public TerminalNode IDF() { return getToken(UgkParser.IDF, 0); }
 		public IdfContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_idf; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitIdf(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IdfContext idf() throws RecognitionException {
@@ -1817,13 +1977,18 @@ public class ugkParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class FilenameContext extends ParserRuleContext {
-		public TerminalNode TYPE() { return getToken(ugkParser.TYPE, 0); }
-		public TerminalNode IDF() { return getToken(ugkParser.IDF, 0); }
-		public TerminalNode FILENAME() { return getToken(ugkParser.FILENAME, 0); }
+		public TerminalNode TYPE() { return getToken(UgkParser.TYPE, 0); }
+		public TerminalNode IDF() { return getToken(UgkParser.IDF, 0); }
+		public TerminalNode FILENAME() { return getToken(UgkParser.FILENAME, 0); }
 		public FilenameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_filename; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof UgkVisitor ) return ((UgkVisitor<? extends T>)visitor).visitFilename(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FilenameContext filename() throws RecognitionException {

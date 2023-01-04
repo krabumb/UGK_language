@@ -1,4 +1,4 @@
-grammar ugk;
+grammar Ugk;
 
 @header{
 package parser;
