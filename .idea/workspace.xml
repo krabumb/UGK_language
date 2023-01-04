@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9252ba-7b93-4ca8-a19b-50f9440aab65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/asm_all_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/asm-all-5.2.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launch.bat" beforeDir="false" afterPath="$PROJECT_DIR$/launch.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ugk.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Ugk.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/testchatgpt.ugk" beforeDir="false" afterPath="$PROJECT_DIR$/examples/testchatgpt.ugk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ugk.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ugk.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ugkLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ugkLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ugkLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ugkParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ugk.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Ugk.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Ugk.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Ugk.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Ugk.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Ugk.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/UgkBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/UgkLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/UgkLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/UgkLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/UgkParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/UgkVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +79,7 @@
       <workItem from="1671801187001" duration="170000" />
       <workItem from="1671801539101" duration="5541000" />
       <workItem from="1672827853094" duration="856000" />
+      <workItem from="1672839182952" duration="2861000" />
     </task>
     <servers />
   </component>

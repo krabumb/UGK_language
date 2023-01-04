@@ -73,6 +73,30 @@ public interface UgkVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitInstruction(UgkParser.InstructionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link UgkParser#selon}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSelon(UgkParser.SelonContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#switchblock}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSwitchblock(UgkParser.SwitchblockContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#cas}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCas(UgkParser.CasContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#defaut}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDefaut(UgkParser.DefautContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link UgkParser#retourne}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

@@ -37,6 +37,19 @@ instruction : declaration
     | appelfonc
     | pour
     | retourne
+    | selon
+    ;
+
+selon : 'selon' expr 'faire' switchblock 'fselon'
+    ;
+
+switchblock : (cas)+ (defaut)?
+    ;
+
+cas : 'cas' expr 'faire' block
+    ;
+
+defaut : 'defaut' 'faire' block
     ;
 
 retourne : 'retourne' (expr)?
