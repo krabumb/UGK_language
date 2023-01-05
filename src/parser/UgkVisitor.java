@@ -37,6 +37,12 @@ public interface UgkVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgramme(UgkParser.ProgrammeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link UgkParser#fonctionoudeclatype}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFonctionoudeclatype(UgkParser.FonctionoudeclatypeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link UgkParser#algorithme}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -48,6 +54,24 @@ public interface UgkVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFonction(UgkParser.FonctionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#declatype}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclatype(UgkParser.DeclatypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#declatypeargs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclatypeargs(UgkParser.DeclatypeargsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#superset}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSuperset(UgkParser.SupersetContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link UgkParser#funcdecargs}.
 	 * @param ctx the parse tree
@@ -222,6 +246,12 @@ public interface UgkVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitBooleen(UgkParser.BooleenContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#idfOrTab}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdfOrTab(UgkParser.IdfOrTabContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link UgkParser#idf}.
 	 * @param ctx the parse tree

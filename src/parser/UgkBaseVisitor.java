@@ -48,6 +48,13 @@ public class UgkBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Ug
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitFonctionoudeclatype(UgkParser.FonctionoudeclatypeContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitAlgorithme(UgkParser.AlgorithmeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -56,6 +63,27 @@ public class UgkBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Ug
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitFonction(UgkParser.FonctionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitDeclatype(UgkParser.DeclatypeContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitDeclatypeargs(UgkParser.DeclatypeargsContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitSuperset(UgkParser.SupersetContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -259,6 +287,13 @@ public class UgkBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Ug
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitBooleen(UgkParser.BooleenContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitIdfOrTab(UgkParser.IdfOrTabContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,0 +1,11 @@
+algorithme
+    debut
+        # Initialisation d'un tableau de 10 entiers
+        tableau[entier] tab := initialiser_tableau(10)
+
+        # acces au tableau
+        tab[0] := 3
+
+        # Initialisation d'un tableau de 3 entiers avec comme valeur par defaut 1
+        tableau[entier] test := initialiser_tableau(3, 1)
+    fin

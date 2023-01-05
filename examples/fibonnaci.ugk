@@ -2,7 +2,7 @@ fonction entier ifibonnaci(entier n)
     debut
         entier i := 0
         entier j := 1
-        pour k de 2 a n faire
+        pour k allant de 2 vers n faire
             entier k := i
             i := i + j
             j := k
@@ -23,4 +23,6 @@ fonction entier rfibonnaci(entier n)
 
 algorithme
     debut
+        ecrire("Test rfibonnaci de 5 : " + rfibonnaci(5))
+        ecrire("Test ifibonnaci de 10 : " + ifibonnaci(10))
     fin

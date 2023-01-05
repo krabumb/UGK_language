@@ -1,0 +1,18 @@
+nouveau type superset(
+  entier value1 => debut
+    si value1 >= 7 et value1 <= 22
+      alors super := value1
+      sinon super := 22
+    fsi
+  fin,
+  entier value2 => debut
+    si value2 >= 0 et value2 <= 100
+      alors super := value2
+      sinon super := 50
+    fsi
+  fin
+) herite booleen
+
+algorithme
+    debut
+    fin

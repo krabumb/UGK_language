@@ -1,0 +1,22 @@
+nouveau type test(entier a, entier b)
+
+fonction vide f()
+    debut
+    fin
+
+nouveau type test4(entier a, entier c)
+
+algorithme
+    debut
+        ecrire(fonc())
+    fin
+
+nouveau type aaa(entier a)
+
+nouveau type j(j m)
+
+fonction j fonc()
+    debut
+        j r := initialiser_type()
+        retourne r
+    fin
