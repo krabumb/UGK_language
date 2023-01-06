@@ -1,0 +1,15 @@
+algorithme debut
+    entier n := 5
+    selon n faire
+        cas 1 faire
+            selon n faire
+                cas 1 faire
+                    ecrire("lol")
+                    briser
+            fselon
+            entier test := 3
+        cas 2 faire
+            entier test := -1
+            briser
+    fselon
+fin

@@ -115,6 +115,12 @@ public interface UgkVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCas(UgkParser.CasContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link UgkParser#range}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRange(UgkParser.RangeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link UgkParser#defaut}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

@@ -1,0 +1,29 @@
+importer <foo.ugk>
+nouveau type AncienType ()
+nouveau type MonType (entier a, entier b, entier c => debut c := 5 fin) herite AncienType
+fonction MonType bar(entier x, entier y) debut
+  selon x faire
+    cas 1..2 faire
+      MonType t := NIL
+      t.a := x + y # Pas possible car t NIL
+      t.b := x - y
+      t.c := x * y # Toujours égal a 5
+      retourne t
+    cas 3..4 faire
+      retourne bar(x - 1, y)
+    defaut faire
+      retourne bar(x - 1, y - 1)
+  fselon
+fin
+algorithme debut
+  MonType t := MonType(1, 2, 3)
+  MonType t2 := bar(t.a, t.b)
+  tant que t2.a < 10 faire
+    t2 := bar(t2.a + 1, t2.b + 1)
+  ftant
+  si t2.b < 20 alors
+    MonType t3 := bar(t2.b, t2.c)
+  sinon
+    MonType t3 := bar(t2.b - 1, t2.c - 1)
+  fsi
+fin

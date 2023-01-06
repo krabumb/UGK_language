@@ -4,11 +4,14 @@ grammar Ugk;
 package parser;
 }
 
-ugk : (imports)? programme EOF ;
+ugk : (imports)? programme EOF
+    ;
 
-imports : (singleimport)+ ;
+imports : (singleimport)+
+    ;
 
-singleimport : 'importer' '<' filename '.ugk' '>' ;
+singleimport : 'importer' '<' filename '.ugk' '>'
+    ;
 
 programme : (fonctionoudeclatype)* algorithme (fonctionoudeclatype)*
     | (fonctionoudeclatype)+
@@ -50,6 +53,7 @@ instruction : declaration
     | pour
     | retourne
     | selon
+    | 'briser'
     ;
 
 selon : 'selon' expr 'faire' switchblock 'fselon'
@@ -58,7 +62,11 @@ selon : 'selon' expr 'faire' switchblock 'fselon'
 switchblock : (cas)+ (defaut)?
     ;
 
-cas : 'cas' expr 'faire' block
+cas : 'cas' range 'faire' block
+    ;
+
+range : expr '..' expr
+    | expr
     ;
 
 defaut : 'defaut' 'faire' block
@@ -134,12 +142,32 @@ exprres : appelfonc
 multipleexprcomp : '°' (foncargs)? '°'
     ;
 
-pmo : '-' | '+' | 'ou' ;
-mde : '*' | '/' | 'mod' | 'quo' | 'et' ;
-boolop : '<=' | '>=' | '!=' | '=' | '>' | '<' ;
-booleen : 'true' | 'false' ;
+pmo : '-'
+    | '+'
+    | 'ou'
+    ;
 
-idfOrTab : idf ('[' expr ']')? ;
+mde : '*'
+    | '/'
+    | 'mod'
+    | 'quo'
+    | 'et'
+    ;
+
+boolop : '<='
+    | '>='
+    | '!='
+    | '='
+    | '>'
+    | '<'
+    ;
+
+booleen : 'vrai'
+    | 'faux'
+    ;
+
+idfOrTab : idf ('[' expr ']')? ('.' idfOrTab)?
+    ;
 
 idf : TYPE | IDF ;
 filename : TYPE | IDF | FILENAME ;

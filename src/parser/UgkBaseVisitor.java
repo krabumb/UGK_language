@@ -139,6 +139,13 @@ public class UgkBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Ug
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitRange(UgkParser.RangeContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitDefaut(UgkParser.DefautContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

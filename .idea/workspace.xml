@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9252ba-7b93-4ca8-a19b-50f9440aab65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/supersettype.ugk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/tableaux.ugk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/types.ugk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/doubleselon.ugk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/superexemple.ugk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/typestest.ugk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ugk.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Ugk.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/fibonnaci.ugk" beforeDir="false" afterPath="$PROJECT_DIR$/examples/fibonnaci.ugk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/launch.bat" beforeDir="false" afterPath="$PROJECT_DIR$/launch.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Ugk.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Ugk.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Ugk.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Ugk.tokens" afterDir="false" />
@@ -83,7 +82,8 @@
       <workItem from="1671801539101" duration="5541000" />
       <workItem from="1672827853094" duration="856000" />
       <workItem from="1672839182952" duration="3430000" />
-      <workItem from="1672905467842" duration="10787000" />
+      <workItem from="1672905467842" duration="11439000" />
+      <workItem from="1672992339208" duration="7226000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,8 @@
+nouveau type test(entier a)
+
+algorithme debut
+    test var := initialiser_type()
+    var.a := 4
+
+    ecrire(var.a)
+fin
