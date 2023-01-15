@@ -113,16 +113,22 @@ primitive : 'entier'
     | 'vide'
     ;
 
-expr : addsousexpr
+expr : ouexpr
     ;
 
-addsousexpr : multordivexpr (pmo expr)?
+ouexpr : etexpr ('ou' ouexpr)?
     ;
 
-multordivexpr : boolexpr (mde expr)?
+etexpr : boolexpr ('et' etexpr)?
     ;
 
-boolexpr : exprres (boolop expr)?
+boolexpr : addsousexpr (('<='|'>='|'!='|'='|'>'|'<') boolexpr)?
+    ;
+
+addsousexpr : multordivexpr (('-'|'+') addsousexpr)?
+    ;
+
+multordivexpr : exprres (('*'|'/'|'mod'|'quo') multordivexpr)?
     ;
 
 exprres : appelfonc
@@ -142,31 +148,11 @@ exprres : appelfonc
 multipleexprcomp : '°' (foncargs)? '°'
     ;
 
-pmo : '-'
-    | '+'
-    | 'ou'
-    ;
-
-mde : '*'
-    | '/'
-    | 'mod'
-    | 'quo'
-    | 'et'
-    ;
-
-boolop : '<='
-    | '>='
-    | '!='
-    | '='
-    | '>'
-    | '<'
-    ;
-
 booleen : 'vrai'
     | 'faux'
     ;
 
-idfOrTab : idf ('[' expr ']')? ('.' idfOrTab)?
+idfOrTab : idf ('[' expr ']')* ('.' idfOrTab)?
     ;
 
 idf : TYPE | IDF ;

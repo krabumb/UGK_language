@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9252ba-7b93-4ca8-a19b-50f9440aab65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/doubleselon.ugk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/superexemple.ugk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/typestest.ugk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ugk.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Ugk.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launch.bat" beforeDir="false" afterPath="$PROJECT_DIR$/launch.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Ugk.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Ugk.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Ugk.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Ugk.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/UgkBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/UgkLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/UgkLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/UgkLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/UgkParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/UgkVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/UgkVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +25,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/UGK_language.iml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ugk.g4" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/examples/fibonnaci.ugk" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/examples/fibotest.ugk" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/examples/test1.ugk" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/examples/test2.ugk" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/launch.bat" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/examples/fibotest.ugk" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/examples/fibonnaci.ugk" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/examples/test1.ugk" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Main.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Ugk.g4" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/UGK_language.iml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,10 +42,16 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\clement.loscot\Desktop\UGK_language\examples" />
@@ -84,6 +79,9 @@
       <workItem from="1672839182952" duration="3430000" />
       <workItem from="1672905467842" duration="11439000" />
       <workItem from="1672992339208" duration="7226000" />
+      <workItem from="1673641097283" duration="3712000" />
+      <workItem from="1673713242514" duration="648000" />
+      <workItem from="1673735076944" duration="596000" />
     </task>
     <servers />
   </component>
@@ -100,6 +98,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
