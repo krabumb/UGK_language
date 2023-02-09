@@ -136,16 +136,12 @@ exprres : appelfonc
     | '(' expr ')'
     | 'non' expr
     | '-' exprres
-    | multipleexprcomp
     | FLOAT
     | DOUBLE
     | INTEGER
     | STRING
     | booleen
     | idfOrTab
-    ;
-
-multipleexprcomp : '°' (foncargs)? '°'
     ;
 
 booleen : 'vrai'

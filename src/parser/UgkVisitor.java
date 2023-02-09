@@ -199,6 +199,24 @@ public interface UgkVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpr(UgkParser.ExprContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link UgkParser#ouexpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOuexpr(UgkParser.OuexprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#etexpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEtexpr(UgkParser.EtexprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UgkParser#boolexpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBoolexpr(UgkParser.BoolexprContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link UgkParser#addsousexpr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -211,41 +229,11 @@ public interface UgkVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMultordivexpr(UgkParser.MultordivexprContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link UgkParser#boolexpr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBoolexpr(UgkParser.BoolexprContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link UgkParser#exprres}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExprres(UgkParser.ExprresContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link UgkParser#multipleexprcomp}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMultipleexprcomp(UgkParser.MultipleexprcompContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link UgkParser#pmo}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPmo(UgkParser.PmoContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link UgkParser#mde}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMde(UgkParser.MdeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link UgkParser#boolop}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBoolop(UgkParser.BoolopContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link UgkParser#booleen}.
 	 * @param ctx the parse tree
