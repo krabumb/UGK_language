@@ -1,5 +1,11 @@
 package AST;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
 import parser.UgkBaseVisitor;
 import parser.UgkParser.AddsousexprContext;
 import parser.UgkParser.AlgofoncblockContext;
@@ -43,42 +49,81 @@ import parser.UgkParser.TantqueContext;
 import parser.UgkParser.TypeContext;
 import parser.UgkParser.UgkContext;
 
-public class AstCreator<T> extends UgkBaseVisitor<T> {
+public class AstCreator extends UgkBaseVisitor<Ast> {
 
     @Override
-    public T visitUgk(UgkContext ctx) {
-        // TODO Auto-generated method stub
-        return null;
+    public Ugk visitUgk(UgkContext ctx) {
+        Ugk ugk = new Ugk();
+        if (ctx.getChildCount() > 2) {
+            ugk.imports = ((Imports) visit(ctx.getChild(0))).imports;
+            ugk.programme = (Programme) visit(ctx.getChild(1));
+        } else {
+            ugk.imports = Collections.emptyList();
+            ugk.programme = (Programme) visit(ctx.getChild(0));
+        }
+        return ugk;
     }
 
     @Override
-    public T visitImports(ImportsContext ctx) {
-        // TODO Auto-generated method stub
-        return null;
+    public Imports visitImports(ImportsContext ctx) {
+        Imports imports = new Imports();
+        imports.imports = new ArrayList<>();
+        for (int i = 0; i < ctx.getChildCount(); i++) {
+            imports.imports.add(((Import) visit(ctx.getChild(i))).filename);
+        }
+        return imports;
     }
 
     @Override
-    public T visitSingleimport(SingleimportContext ctx) {
-        // TODO Auto-generated method stub
-        return null;
+    public Import visitSingleimport(SingleimportContext ctx) {
+        Import imp = new Import();
+        imp.filename = ((Filename) visit(ctx.getChild(2))).filename + ".ugk";
+        return imp;
     }
 
     @Override
-    public T visitProgramme(ProgrammeContext ctx) {
-        // TODO Auto-generated method stub
-        return null;
+    public Programme visitProgramme(ProgrammeContext ctx) {
+        Programme programme = new Programme();
+        for (int i = 0; i < ctx.getChildCount(); i++) {
+            Ast ast = visit(ctx.getChild(i));
+            if (ast instanceof DecType) {
+                if (programme.decTypes == null) {
+                    programme.decTypes = new ArrayList<>();
+                }
+                programme.decTypes.add((DecType) ast);
+            } else if (ast instanceof DecFonction) {
+                if (programme.decFonctions == null) {
+                    programme.decFonctions = new ArrayList<>();
+                }
+                programme.decFonctions.add((DecFonction) ast);
+            } else if (ast instanceof Algorithme) {
+                programme.algorithme = Optional.of((Algorithme) ast);
+            } else {
+                throw new RuntimeException("Unexpected child type");
+            }
+        }
+        if (programme.decTypes == null) {
+            programme.decTypes = Collections.emptyList();
+        }
+        if (programme.decFonctions == null) {
+            programme.decFonctions = Collections.emptyList();
+        }
+        if (programme.algorithme == null) {
+            programme.algorithme = Optional.empty();
+        }
+        return programme;
     }
 
     @Override
-    public T visitFonctionoudeclatype(FonctionoudeclatypeContext ctx) {
-        // TODO Auto-generated method stub
-        return null;
+    public Ast visitFonctionoudeclatype(FonctionoudeclatypeContext ctx) {
+        return visit(ctx.getChild(0));
     }
 
     @Override
-    public T visitAlgorithme(AlgorithmeContext ctx) {
-        // TODO Auto-generated method stub
-        return null;
+    public Algorithme visitAlgorithme(AlgorithmeContext ctx) {
+        Algorithme algorithme = new Algorithme();
+        algorithme.instructions = visit(ctx.getChild(0)).instructions;
+        return algorithme;
     }
 
     @Override
@@ -286,8 +331,9 @@ public class AstCreator<T> extends UgkBaseVisitor<T> {
     }
 
     @Override
-    public T visitFilename(FilenameContext ctx) {
-        // TODO Auto-generated method stub
-        return null;
+    public Filename visitFilename(FilenameContext ctx) {
+        Filename filename = new Filename();
+        filename.filename = ctx.getChild(0).getText();
+        return filename;
     }   
 }
