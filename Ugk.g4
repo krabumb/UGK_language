@@ -100,8 +100,8 @@ declaration : type idf (':=' expr)?
     ;
 
 type : primitive
-    | TYPE
     | 'tableau' '[' type ']'
+    | TYPE
     ;
 
 primitive : 'entier'
@@ -136,12 +136,17 @@ exprres : appelfonc
     | '(' expr ')'
     | 'non' expr
     | '-' exprres
+    | '[' expr ']'
+    | tableauprerempli
     | FLOAT
     | DOUBLE
     | INTEGER
     | STRING
     | booleen
     | idfOrTab
+    ;
+
+tableauprerempli : '{' (foncargs)? '}'
     ;
 
 booleen : 'vrai'

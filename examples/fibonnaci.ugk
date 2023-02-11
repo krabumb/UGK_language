@@ -3,7 +3,7 @@ fonction entier ifibonnaci(entier n)
         entier i := 0
         entier j := 1
         pour k allant de 2 vers n faire
-            entier k := i
+            k := i
             i := i + j
             j := k
         fpour
