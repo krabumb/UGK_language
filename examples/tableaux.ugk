@@ -1,11 +1,11 @@
 algorithme
     debut
         # Initialisation d'un tableau de 10 entiers
-        tableau[entier] tab := initialiser_tableau(10)
+        tableau[entier] tab := [1+3]
 
         # acces au tableau
         tab[0] := 3
 
-        # Initialisation d'un tableau de 3 entiers avec comme valeur par defaut 1
-        tableau[entier] test := initialiser_tableau(3, 1)
+        # Initialisation d'un tableau de 3 entiers avec comme valeur par defaut 1,2 et 4
+        tableau[entier] test := {1,2,4}
     fin
