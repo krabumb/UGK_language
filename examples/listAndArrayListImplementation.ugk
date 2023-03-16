@@ -1,0 +1,80 @@
+nouveau type Liste(
+    entier taille
+)
+
+fonction entier obtenirTaille(Liste liste) debut
+    retourne liste.taille
+fin
+
+nouveau type ArrayList(
+    tableau[entier] elements,
+    entier taille,
+    entier capacite
+) herite Liste
+
+fonction ArrayList construireArrayList(entier capaciteInitiale) debut
+    tableau[entier] nouveauxElements := {NIL * capaciteInitiale}
+    retourne ArrayList(nouveauxElements, 0, capaciteInitiale)
+fin
+
+fonction entier obtenirTaille(ArrayList liste) debut
+    retourne liste.taille
+fin
+
+fonction entier obtenirCapacite(ArrayList liste) debut
+    retourne liste.capacite
+fin
+
+fonction entier obtenirElement(ArrayList liste, entier index) debut
+    retourne liste.elements[index]
+fin
+
+fonction ArrayList ajouterElement(ArrayList liste, entier element) debut
+    si liste.taille >= liste.capacite alors
+        ArrayList nouvelleListe := construireArrayList(liste.capacite * 2)
+        pour i allant de 0 vers liste.taille - 1 faire
+            nouvelleListe.elements[i] := liste.elements[i]
+        fpour
+        liste := nouvelleListe
+    fsi
+    liste.elements[liste.taille] := element
+    liste.taille := liste.taille + 1
+    retourne liste
+fin
+
+fonction ArrayList supprimerElement(ArrayList liste, entier index) debut
+    si index < 0 ou index >= liste.taille alors
+        retourne liste
+    fsi
+    pour i allant de index vers liste.taille - 2 faire
+        liste.elements[i] := liste.elements[i + 1]
+    fpour
+    liste.taille := liste.taille - 1
+    retourne liste
+fin
+
+algorithme debut
+    entier capaciteInitiale := 4
+    ArrayList maListe := construireArrayList(capaciteInitiale)
+
+    maListe := ajouterElement(maListe, 1)
+    maListe := ajouterElement(maListe, 2)
+    maListe := ajouterElement(maListe, 3)
+    maListe := ajouterElement(maListe, 4)
+    maListe := ajouterElement(maListe, 5)  # This will trigger the resizing of the ArrayList
+
+    entier taille := obtenirTaille(maListe)
+    entier capacite := obtenirCapacite(maListe)
+
+    entier troisiemeElement := obtenirElement(maListe, 2)  # Retrieve the element at index 2 (the third element)
+
+    maListe := supprimerElement(maListe, 1)  # Remove the element at index 1 (the second element)
+
+    taille := obtenirTaille(maListe)  # The new size after removing an element
+
+    # Iterate through the elements of the ArrayList and print them
+    pour i allant de 0 vers taille - 1 faire
+        entier element := obtenirElement(maListe, i)
+        # Print the element here
+    fpour
+fin
